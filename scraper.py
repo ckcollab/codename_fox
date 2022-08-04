@@ -69,11 +69,13 @@ for news_organization, base_url in ARTICLE_LOCATIONS:
         if not published_date:
             # CNN helpers
             if "og" in article.meta_data:
-                if pubdate := article.meta_data["og"].get("pubdate"):
+                if article.meta_data["og"].get("pubdate"):
+                    pubdate = article.meta_data["og"].get("pubdate")
                     published_date = dateutil.parser.parse(pubdate)
 
             # Try to snag the article date from Fox in various ways
-            if dc_date := article.meta_data.get("dc.date"):
+            if article.meta_data.get("dc.date"):
+                dc_date = article.meta_data.get("dc.date")
                 try:
                     published_date = datetime.strptime(dc_date, "%Y-%m-%d %I:%M:%S %p")
                 except ValueError:
