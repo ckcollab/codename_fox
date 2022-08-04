@@ -1,5 +1,8 @@
 # codename_fox
 
+This project is for scraping articles from popular news organizations for further analysis.
+
+
 Usage:
 
 ```bash
