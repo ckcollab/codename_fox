@@ -1,5 +1,17 @@
 # codename_fox
 
+Usage:
+
+```bash
+$ git clone https://github.com/ckcollab/codename_fox.git
+$ cd codename_fox
+$ ./scraper.py
+
+# articles written to output/
+```
+
+Edit `scraper.py` to configure the project
+
 ## TODO:
 
  - Get dump of article urls for
