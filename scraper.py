@@ -12,11 +12,41 @@ from newspaper import Article, Config, ArticleException
 # Configuration section
 # ----------------------------------------------------------------------------
 ORGANIZATIONS = [
-    ("cnn", "https://cnn.com"),
-    ("foxnews", "https://www.foxnews.com/"),
-    ("breitbart", "https://www.breitbart.com/"),
-    ("msnbc", "https://msnbc.com/"),
-    ("newsmax", "https://newsmax.com/"),
+    # liberal
+    # ("Lcnn", "https://cnn.com"),
+    # ("Lmsnbc", "https://msnbc.com/"),
+    # ("LVOX","https://www.vox.com/"),
+    # ("LDaily Beast","https://www.thedailybeast.com/"),
+    # ("LBuzzfeed News","https://www.buzzfeednews.com/"),
+    # ("LVICE","https://www.vice.com/en"),
+    # ("LPalmer Report","https://www.palmerreport.com/"),
+    # ("LDemocracy Now","https://www.democracynow.org/"),
+    # ("LHuff Post","https://www.huffpost.com/"),
+    # ("LNY Times","https://www.nytimes.com/"),
+
+    # neutral
+    # ("NReuter","https://www.reuters.com/"),
+    # ("NAP","https://www.ap.org/en/"),
+    # ("NBBC","https://www.bbc.com/news"),
+    # ("NC-Span","https://www.c-span.org/"),
+    # ("NBloomberg","https://www.bloomberg.com/"),
+    # ("NStat","https://www.statnews.com/"),
+    # ("NNYJournalMEd","https://www.nejm.org/"),
+    # ("NUSA Today","https://www.usatoday.com/"),
+    # ("NNature","https://www.nature.com/"),
+    # ("NScience","https://www.sciencenews.org/"),
+
+    # Conservative
+    # ("Cfoxnews", "https://www.foxnews.com/"),
+    # ("Cbreitbart", "https://www.breitbart.com/"),
+    # ("Cnewsmax", "https://newsmax.com/"),
+    ("COAN", "https://www.oann.com/"),
+    ("CDailywire","https://www.dailywire.com/read"),
+    ("CEagle Fourm","https://eagleforum.org/"),
+    ("CRed State","https://redstate.com/"),
+    ("CDailycaller","https://dailycaller.com/"),
+    ("CNew York Post","https://nypost.com/"),
+    ("CDailyMail","https://www.dailymail.co.uk/ushome/"),
 ]
 
 URL_PATTERNS_TO_IGNORE = [
