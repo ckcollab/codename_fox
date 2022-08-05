@@ -1,4 +1,4 @@
-#!python3
+#!/usr/bin/env python3
 import os
 
 import dateutil.parser
@@ -6,13 +6,12 @@ import newspaper
 import re
 
 from datetime import datetime
-from newspaper import Article, Config
-
+from newspaper import Article, Config, ArticleException
 
 # ----------------------------------------------------------------------------
 # Configuration section
 # ----------------------------------------------------------------------------
-ARTICLE_LOCATIONS = [
+ORGANIZATIONS = [
     ("cnn", "https://cnn.com"),
     ("foxnews", "https://www.foxnews.com/"),
     ("breitbart", "https://www.breitbart.com/"),
@@ -44,7 +43,7 @@ config = Config()
 config.browser_user_agent = USER_AGENT
 config.request_timeout = 10
 
-for news_organization, base_url in ARTICLE_LOCATIONS:
+for news_organization, base_url in ORGANIZATIONS:
     # Get articles from front pages
     source = newspaper.build(base_url, config=config, memoize_articles=False)
     # source.download_articles()
@@ -57,7 +56,12 @@ for news_organization, base_url in ARTICLE_LOCATIONS:
 
         print(f"Downloading {article.url}")
 
-        article.download()
+        try:
+            article.download()
+        except ArticleException:
+            # Article not found?! go onto next one..
+            continue
+
         article.parse()
 
         extracted_text = article.text
