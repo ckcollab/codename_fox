@@ -88,11 +88,10 @@ for news_organization, base_url in ORGANIZATIONS:
 
         try:
             article.download()
+            article.parse()
         except ArticleException:
             # Article not found?! go onto next one..
             continue
-
-        article.parse()
 
         extracted_text = article.text
         for chunk in TEXT_CHUNKS_TO_REMOVE:
